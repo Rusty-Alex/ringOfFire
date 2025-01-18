@@ -9,15 +9,19 @@
     border-top-left-radius:50px;
     border-bottom-left-radius:50px;   
     img{
-        width: 100px;
-        height: 100px;
+        width: 70px;
+        height: 70px;
         border-radius: 100%;
         cursor: pointer;
     }
-    background-color: orange;
+    background-color: #404040;
     span{
         font-size: 32px;
         margin-left: 16px;
     }
+}
+
+.player-aktive{    
+    background-color: orange;
 }
 

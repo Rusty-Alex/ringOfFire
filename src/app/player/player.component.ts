@@ -8,4 +8,6 @@ import { Component, Input } from '@angular/core';
 })
 export class PlayerComponent {
 @Input() index!: number;
+@Input() playerName!: string;
+@Input() playerAktive = false;
 }

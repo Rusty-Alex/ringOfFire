@@ -1,5 +1,5 @@
-@for(item of game.players; track item;){
-    <app-player [index]="$index"></app-player>
+@for(item of game.players; track item; let i = $index) {
+    <app-player [index]="i" [playerName]="item" [playerAktive]="i == game.currentPlayer"></app-player>
 }
 
 <div class="game-screen">
@@ -24,3 +24,9 @@
         }
     
 </div>
+
+<button mat-fab class="btn-add" (click)="openDialog()">
+    <mat-icon>add</mat-icon>
+  </button>
+
+  <app-game-info [card]="currentCard"></app-game-info>
