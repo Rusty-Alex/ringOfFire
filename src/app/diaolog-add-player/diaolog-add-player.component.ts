@@ -1,9 +1,9 @@
-import { Component, Input,inject } from '@angular/core';
-import {MatDialog, MatDialogModule,MatDialogRef,} from '@angular/material/dialog';
-import {FormsModule} from '@angular/forms';
-import {MatButtonModule} from '@angular/material/button';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
+import { Component, Input, inject } from '@angular/core';
+import { MatDialog, MatDialogModule, MatDialogRef, } from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 
 
@@ -14,15 +14,16 @@ import {MatInputModule} from '@angular/material/input';
   templateUrl: './diaolog-add-player.component.html',
   styleUrl: './diaolog-add-player.component.scss'
 })
-export class DiaologAddPlayerComponent  {
-  
-  name:string = '';
+export class DiaologAddPlayerComponent {
 
- readonly dialog = inject(MatDialog);
-  
+  name: string = '';
+
+  readonly dialog = inject(MatDialog);
+
   onNoClick(): void {
+    
     this.dialog.closeAll();
   }
- 
- 
+  
+
 }

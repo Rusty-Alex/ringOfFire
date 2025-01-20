@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
+import { Game } from '../models/game';
 
 @Component({
   selector: 'app-game-info',

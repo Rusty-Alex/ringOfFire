@@ -32,9 +32,15 @@ export class GameComponent  {
   }
 
   ngOnInit(): void {
-    this.newGame();
+    this.newGame();    
+      if(this.game.players.length < 3){
+        this.openDialog();
+      }
+  
+    
     
   }
+  
 newGame() {
   this.game = new Game();
   
