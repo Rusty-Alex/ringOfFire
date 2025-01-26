@@ -13,10 +13,13 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { DiaologAddPlayerComponent } from '../diaolog-add-player/diaolog-add-player.component';
 import { GameInfoComponent } from '../game-info/game-info.component';
+import { AsyncPipe } from '@angular/common';
+import { Observable } from 'rxjs';
+import { Firestore, collection, collectionData } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-game',
-  imports: [CommonModule,PlayerComponent,MatButtonModule,MatIconModule,MatDialogModule,MatFormFieldModule,MatInputModule,GameInfoComponent],
+  imports: [CommonModule,PlayerComponent,MatButtonModule,MatIconModule,MatDialogModule,MatFormFieldModule,MatInputModule,GameInfoComponent,AsyncPipe],
   templateUrl: './game.component.html',
   styleUrl: './game.component.scss'
 })
@@ -24,7 +27,7 @@ export class GameComponent  {
   currentCard: string = '';
   pickedCard = false;
   game!: Game;
-  
+  firestore: Firestore = inject(Firestore);
   readonly dialog = inject(MatDialog);
   
   constructor() {
