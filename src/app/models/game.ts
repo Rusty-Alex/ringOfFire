@@ -3,6 +3,8 @@ export class Game {
     public stack: string[] = [];
     public playedCards: string[] = [];
     public currentPlayer: number = 0;
+    public currentCard: string = '';
+    public pickedCard = false;
 
     constructor() {
         for (let i = 0; i < 13; i++) {
@@ -12,6 +14,17 @@ export class Game {
             this.stack.push(`diamonds_${i + 1}`);
         }
         shuffle(this.stack);
+    }
+
+    public toJSon() {    
+        return {
+            players: this.players,
+            stack: this.stack,
+            playedCards: this.playedCards,
+            currentPlayer: this.currentPlayer,
+            pickedCard: this.pickedCard,
+            currentCard: this.currentCard
+        };
     }
 
 }

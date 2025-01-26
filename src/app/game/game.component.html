@@ -14,11 +14,11 @@
     @for (item of game.playedCards; track $index; let index = $index) {
         <img src="./img/cards/{{ game.playedCards[index] }}.png" class="played-card"  alt="">
     }
-    @if(pickedCard){
-        <div class="card-stack"><img (click)="takeCard()" [ngClass]="{ 'picked-card': pickedCard }" style="right: 840px"
-                src="./img/cards/{{ currentCard }}.png" alt=""></div>
+    @if(game.pickedCard){
+        <div class="card-stack"><img (click)="takeCard()" [ngClass]="{ 'picked-card': game.pickedCard }" style="right: 840px"
+                src="./img/cards/{{ game.currentCard }}.png" alt=""></div>
         }@else {
-        <div class="card-stack"><img (click)="takeCard()" [ngClass]="{ 'picked-card': pickedCard }" class="top-card"
+        <div class="card-stack"><img (click)="takeCard()" [ngClass]="{ 'picked-card': game.pickedCard }" class="top-card"
                 style="right: 840px" src="./img/cards/card_cover.png" alt=""></div>
     
         }
@@ -29,4 +29,4 @@
     <mat-icon>add</mat-icon>
   </button>
 
-  <app-game-info [card]="currentCard"></app-game-info>
+  <app-game-info [card]="game.currentCard"></app-game-info>
